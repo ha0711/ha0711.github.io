@@ -6,6 +6,23 @@
  * Made By MaterializeCSS.com
  */
 
+/* Define full-page layout */
+.body-layout {
+  display: grid;
+  grid-template-columns: 3fr 1fr; /* Main 75%, Sidebar 25% */
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .body-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
 .icon-block {
   padding: 0 15px;
 }
@@ -29,3 +46,4 @@ ol#mylist li {
   margin-left: 20px;
   margin-right: 12px;
 }
+
