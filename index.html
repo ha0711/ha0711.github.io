@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html lang="jp">
-
-<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+<head>
   <meta charset="utf-8" />
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Hassan Asghar</title>
-
-  <!-- CSS  -->
+  
+  <!-- Font Imports -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- CSS (Materialize + custom) -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-
-  <!-- favicon -->
-  <link rel="shortcut icon" href="figures/circuit_black.ico" />
-
-  <!-- OGP -->
-  <meta property="og:title" content="Hassan Asghar" />
-  <meta property="og:type" content="website" />
-  <meta property="og:description" content="I am Hassan.This site introduces my profile and current research progress." />
-  <meta property="og:image" content="" />
-  <meta property="fb:admins" content="100006481691635" />
+  <link href="css/materialize.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  
+  <style>
+    body { font-family: 'Open Sans', sans-serif; margin:0; padding:0; }
+    h1,h2,h3,h4 { font-family: 'Playfair Display', serif; margin-top:0; }
+    .layout-container { display: grid; grid-template-columns: 3fr 1fr; gap: 2rem; max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
+    #sec-news { border-left: 2px solid #e0e0e0; padding-left: 1.5rem; }
+    @media (max-width: 768px) {
+      .layout-container { display: block; }
+      #sec-news { border-left: none; padding-left: 0; margin-top: 2rem; }
+    }
+  </style>
 </head>
-
 <body>
-  <nav class="green lighten-1" role="navigation">
+
+  <!-- Navigation -->
+  <nav class="green lighten-1">
     <div class="nav-wrapper container">
       <ul class="right hide-on-med-and-down">
         <li><a href="#sec-profile">Profile</a></li>
@@ -43,150 +46,73 @@
       </a>
     </div>
   </nav>
-
-  <!-- ---------------Top of Page--------------- -->
-  <div class="container">
-    <div class="section no-pad-bot" id="sec-top">
-      <br><br>
-      <div class="row">
-        <div class="col m3 l3 hide-on-small-only center">
-          <img class="responsive-img" width="220" src="figures/Asghar.jpeg" />
-        </div>
-        <div class="col s12 m9 l9">
-          <h3 class="header">Hassan Asghar</h3>
-          <p class="black-text">
-            <b class="red-text">Research Interests</b>: HPC, Big Data Analytics, Cloud Computing, Network Security and Protocol Security.
-            <br>
-            <span style="margin-left: 0px">
-              <!-- DBLP Link -->
-              <b class="red-text">Academic Profiles</b>:
+  
+  <!-- Main Layout -->
+  <div class="layout-container">
+    <!-- Left Column -->
+    <div>
+      <!-- Top Section -->
+      <section id="sec-top">
+        <div class="row">
+          <div class="col m3 l3 hide-on-small-only center">
+            <img src="figures/Asghar.jpeg" class="responsive-img" width="220" alt="Hassan Asghar"/>
+          </div>
+          <div class="col s12 m9 l9">
+            <h1>Hassan Asghar</h1>
+            <p><strong>Research Interests</strong>: HPC, Big Data Analytics, Cloud Computing, Network & Protocol Security.</p>
+            <p><strong>Academic Profiles</strong>:
               <a href="https://dblp.uni-trier.de/pid/295/6729.html" target="_blank">
                 <img src="https://icons.iconarchive.com/icons/academicons-team/academicons/128/dblp-icon.png" alt="DBLP" style="width:24px; vertical-align:middle;">
               </a>
-              <!-- Google Scholar Link -->
-              <a href="https://scholar.google.com/citations?user=C45RK5kAAAAJ&hl=en" target="_blank" style="margin-left:10px;">
-                <img src="https://icons.iconarchive.com/icons/academicons-team/academicons/128/google-scholar-icon.png" alt="Google Scholar" style="width:24px; vertical-align:middle;">
+              <a href="https://scholar.google.com/citations?user=C45RK5kAAAAJ&hl=en" target="_blank">
+                <img src="https://icons.iconarchive.com/icons/academicons-team/academicons/128/google-scholar-icon.png" alt="Google Scholar" style="margin-left:10px; width:24px; vertical-align:middle;">
               </a>
-            </span>
-          </p>
+            </p>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
+      </section>
 
-  <div class="container">
-    <div class="row" style="margin-top: 40px;">
-      <!-- Profile Column (Left) -->
-      <div class="col s12 m6" id="sec-profile" style="padding-right: 20px;">
-        <h4 class="header" style="font-family: 'Roboto', sans-serif;">Profile</h4>
-        <p style="font-family: 'Open Sans', sans-serif; line-height:1.6;">
-          <strong>Hassan Asghar</strong> holds an M.S. in Computer Science from COMSATS University Islamabad, Abbottabad Campus and a B.S. in Computer Science from SZABIST, Islamabad Campus. His technical interests lie in Parallel and Distributed Computing, High-Performance Computing, Big Data Analytics, and Cloud Computing. With a research-oriented mindset and hands-on experience in system benchmarking and performance optimization across scalable computing environments, Hassan is adept at bridging theoretical foundations with real-world engineering solutions.
-        </p>
-      </div>
-      <!-- News Column (Right) -->
-      <div class="col s12 m6" id="sec-news" style="padding-left: 20px; border-left: 2px solid #e0e0e0;">
-        <h4 class="header red-text" style="font-family: 'Roboto', sans-serif;">News</h4>
-        <ul style="font-family: 'Open Sans', sans-serif; line-height:1.6; list-style:none; padding:0;">
-          <li><b>[2025.08.16]</b> A poster submission has been made to <strong>ICNP 2025</strong> (33rd IEEE International Conference on Network Protocols), to be held in Seoul, South Korea on Sep. 22–25, 2025.</li>
-          <li><b>[2025.08.02]</b> The preprint <i>"VWAttacker: A Systematic Security Testing Framework for Voice over WiFi User Equipments"</i> was submitted to <a href="https://arxiv.org/abs/2508.01469" target="_blank">arXiv</a>.</li>
-          <li><b>[2022.03.12]</b> The article <i>"Comparative analysis of task level heuristic scheduling algorithms in cloud computing"</i> was published in <a href="https://link.springer.com/article/10.1007/s11227-022-04382-x" target="_blank">The Journal of Supercomputing</a>.</li>
-          <li><b>[2022.02.16]</b> The survey <i>"A Survey on Scheduling Techniques in the Edge Cloud: Issues, Challenges and Future Directions"</i> was submitted to <a href="https://arxiv.org/abs/2202.07799" target="_blank">arXiv</a>.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <!-- ---------------Publications--------------- -->
-  <div class="container">
-    <div class="section no-pad-bot" id="sec-publications">
-      <h4 class="header blue-grey-text text-darken-4" style="font-family: 'Roboto', sans-serif;">Publications</h4>
-    </div>
-    <br>
-    <div class="divider"></div>
+      <!-- Profile Section -->
+      <section id="sec-profile">
+        <h2>Profile</h2>
+        <p><strong>Hassan Asghar</strong> holds an M.S. in Computer Science from COMSATS University Islamabad (Abbottabad Campus) and a B.S. in Computer Science from SZABIST, Islamabad Campus. His technical interests include Parallel & Distributed Computing, High-Performance Computing, Big Data Analytics, and Cloud Computing. He combines a research-oriented mindset with hands-on experience in system benchmarking and performance optimization to effectively bridge theory with real-world engineering solutions.</p>
+      </section>
 
-    <!-- Preprints -->
-    <div class="section" style="font-family: 'Open Sans', sans-serif;">
-      <h5 class="header teal-text text-darken-2" style="font-family: 'Roboto', sans-serif;">Preprints</h5>
-      <ol id="mylist" class="black-text" style="line-height:1.6;">
-        <li>
-          <strong>Imtiaz Karim</strong>, Hyunwoo Lee, Hassan Asghar, Kazi Samin Mubasshir, Seulgi Han, Mashroor Hasan Bhuiyan, Elisa Bertino, “VWAttacker: A Systematic Security Testing Framework for Voice over WiFi User Equipments,” <em>arXiv preprint arXiv:2508.01469</em>, submitted Aug. 2, 2025.
-          <a href="https://arxiv.org/abs/2508.01469" target="_blank" class="btn-small waves-effect green darken-1"><i class="tiny material-icons white-text">file_download</i></a>
-        </li>
-        <li>
-          <strong>Hassan Asghar</strong>, Eun-Sung Jung, “A Survey on Scheduling Techniques in the Edge Cloud: Issues, Challenges and Future Directions,” <em>arXiv preprint arXiv:2202.07799</em>, submitted Feb. 16, 2022.
-          <a href="https://arxiv.org/abs/2202.07799" target="_blank" class="btn-small waves-effect green darken-1"><i class="tiny material-icons white-text">file_download</i></a>
-        </li>
-      </ol>
+      <!-- Publications Section -->
+      <section id="sec-publications">
+        <h2>Publications</h2>
+        <ol style="line-height:1.6;">
+          <li><em>Imtiaz Karim, Hyunwoo Lee, Hassan Asghar, Kazi Samin Mubasshir, Seulgi Han, Mashroor Hasan Bhuiyan, Elisa Bertino</em>, “VWAttacker: A Systematic Security Testing Framework for Voice over WiFi User Equipments,” arXiv preprint arXiv:2508.01469, submitted Aug. 2, 2025. :contentReference[oaicite:1]{index=1}</li>
+          <li><em>Hassan Asghar, Eun-Sung Jung</em>, “A Survey on Scheduling Techniques in the Edge Cloud: Issues, Challenges and Future Directions,” arXiv preprint arXiv:2202.07799, submitted Feb. 16, 2022.</li>
+          <li><em>Laiba Hamid, Asmara Jadoon, Hassan Asghar</em>, “Comparative analysis of task level heuristic scheduling algorithms in cloud computing,” <em>The Journal of Supercomputing</em>, vol. 78, pp. 12931–12949, Mar. 12, 2022. :contentReference[oaicite:2]{index=2}</li>
+          <li><em>Hassan Asghar, B. Nazir</em>, “Analysis and implementation of reactive fault tolerance techniques in Hadoop: a comparative study,” <em>The Journal of Supercomputing</em>, vol. 77, no. 7, pp. 7184–7210, 2021.</li>
+          <li><em>Hassan Asghar, S. Choe, J. W. Choi, E. S. Jung</em>, “Systematic Benchmarking/Profiling Approaches to Improve I/O Performance of GloSea,” 10th International Conference on Green and Human Information Technology (ICGHIT 2022), oral, Jan. 2022.</li>
+        </ol>
+      </section>
     </div>
-
-    <br>
-    <div class="divider"></div>
-
-    <!-- Journal Papers -->
-    <div class="section" style="font-family: 'Open Sans', sans-serif;">
-      <h5 class="header teal-text text-darken-2" style="font-family: 'Roboto', sans-serif;">Refereed Journal Papers</h5>
-      <ol id="mylist" class="black-text" style="line-height:1.6;">
-        <li>
-          <strong>Laiba Hamid</strong>, Asmara Jadoon, Hassan Asghar, “Comparative analysis of task level heuristic scheduling algorithms in cloud computing,” <em>The Journal of Supercomputing</em>, vol. 78, pp. 12931–12949, Mar. 12, 2022.
-          <a href="https://link.springer.com/article/10.1007/s11227-022-04382-x" target="_blank" class="btn-small waves-effect green darken-1"><i class="tiny material-icons white-text">file_download</i></a>
-        </li>
-        <li>
-          <strong>Hassan Asghar</strong>, B. Nazir, “Analysis and implementation of reactive fault tolerance techniques in Hadoop: a comparative study,” <em>The Journal of Supercomputing</em>, vol. 77, no. 7, pp. 7184–7210, 2021.
-          <a href="https://link.springer.com/article/10.1007/s11227-020-03491-9" target="_blank" class="btn-small waves-effect green darken-1"><i class="tiny material-icons white-text">file_download</i></a>
-        </li>
-      </ol>
-    </div>
-
-    <br>
-    <div class="divider"></div>
-
-    <!-- Conferences -->
-    <div class="section" style="font-family: 'Open Sans', sans-serif;">
-      <h5 class="header teal-text text-darken-2" style="font-family: 'Roboto', sans-serif;">Refereed International Conferences</h5>
-      <ol id="mylist" class="black-text left" style="line-height:1.6;">
-        <li>
-          <strong>Hassan Asghar</strong>, S. Choe, J. W. Choi, E. S. Jung, “Systematic Benchmarking/Profiling Approaches to Improve I/O Performance of GloSea,” 10th International Conference on Green and Human Information Technology (ICGHIT 2022), oral, Jan. 2022.
-          <a href="https://www.researchgate.net/publication/358503056_Systematic_BenchmarkingProfiling_Approaches_to_Improve_IO_Performance_of_GloSea" target="_blank" class="btn-small waves-effect green darken-1"><i class="tiny material-icons white-text">file_download</i></a>
-        </li>
-      </ol>
-    </div>
-  </div>
-  <!-- ---------------Contact--------------- -->
-  <div class="container">
-    <div class="section no-pad-bot" id="sec-contact">
-      <h4 class="header">Contact</h4>
-    </div>
-    <div class="divider"></div>
-    <div class="section">
-      <ul>
-        <li><i style="font-size: 20px" class="tiny material-icons left">my_location</i>Pakistan</li>
-        <li><i style="font-size: 20px" class="tiny material-icons left">mail</i>hasanasghar (at) naver (dot) com</li>
+    
+    <!-- Right Sidebar: News -->
+    <aside id="sec-news">
+      <h2>News</h2>
+      <ul style="list-style:none; padding:0; line-height:1.6;">
+        <li><b>[2025.08.16]</b> Poster submitted to <strong>ICNP 2025</strong>, Seoul, Sep 22–25.</li>
+        <li><b>[2025.08.02]</b> Preprint “VWAttacker: A Systematic Security Testing Framework for Voice over WiFi User Equipments” submitted to <a href="https://arxiv.org/abs/2508.01469" target="_blank">arXiv</a>.</li>
+        <li><b>[2022.03.12]</b> Article published: “Comparative analysis of task level heuristic scheduling algorithms in cloud computing,” <a href="https://link.springer.com/article/10.1007/s11227-022-04382-x" target="_blank">The Journal of Supercomputing</a>.</li>
+        <li><b>[2022.02.16]</b> Survey submitted: “A Survey on Scheduling Techniques in the Edge Cloud: Issues, Challenges and Future Directions,” <a href="https://arxiv.org/abs/2202.07799" target="_blank">arXiv</a>.</li>
       </ul>
-    </div>
+    </aside>
   </div>
-
-  <footer class="page-footer green">
-    <div class="footer-copyright">
-      <div class="container">
-        © 2022 Hassan Asghar
-        <a class="white-text right">Last-updated: Aug 17, 2025</a>
-      </div>
+  
+  <!-- Footer -->
+  <footer class="page-footer green" style="padding:1rem;">
+    <div class="container center grey-text text-lighten-4">
+      © 2022 Hassan Asghar • Last updated: Aug 17, 2025
     </div>
   </footer>
-
+  
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
