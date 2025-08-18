@@ -16,11 +16,36 @@
   <style>
     body { font-family: 'Open Sans', sans-serif; margin:0; padding:0; }
     h1,h2,h3,h4 { font-family: 'Minion Pro', serif; }
-    .layout-container { display: grid; grid-template-columns: 3fr 1fr; gap: 2rem; max-width: 1600px; margin: 2rem auto; padding: 0 1rem; }
-    #sec-news { border-left: 2px solid #e0e0e0; padding-left: 1.5rem; }
+
+    /* Two-column Layout */
+    .layout-container {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      gap: 2rem;
+      max-width: 1600px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    #sec-news {
+      border-left: 2px solid #e0e0e0;
+      padding-left: 1.5rem;
+    }
     @media (max-width: 800px) {
       .layout-container { display: block; }
       #sec-news { border-left: none; padding-left: 0; margin-top: 2rem; }
+    }
+
+    /* Flexbox Alignment for Top Section */
+    .top-flex-container {
+      display: flex;
+      align-items: center; /* Vertically center image and text */
+      gap: 1rem;
+    }
+    .profile-pic {
+      max-height: 120px;
+      height: auto;
+      width: auto;
+      border-radius: 4px;
     }
   </style>
 </head>
@@ -29,7 +54,6 @@
   <!-- Navigation -->
   <nav class="green lighten-1">
     <div class="nav-wrapper container">
-      
       <ul class="right hide-on-med-and-down">
         <li><a href="https://ha0711.github.io">Home</a></li>
         <li><a href="#sec-profile">Profile</a></li>
@@ -38,7 +62,7 @@
         <li><a href="#sec-contact">Contact</a></li>
       </ul>
       <ul id="nav-mobile" class="side-nav">
-         <li><a href="https://ha0711.github.io">Home</a></li>
+        <li><a href="https://ha0711.github.io">Home</a></li>
         <li><a href="#sec-profile">Profile</a></li>
         <li><a href="#sec-publications">Publications</a></li>
         <li><a href="#sec-news">News</a></li>
@@ -56,11 +80,9 @@
     <div>
       <!-- Top Section -->
       <section id="sec-top">
-        <div class="row">
-          <div class="col m3 l3 hide-on-small-only center">
-            <img src="figures/Asghar.jpeg" class="responsive-img" width="150" alt="Hassan Asghar"/>
-          </div>
-          <div class="col s12 m9 l9">
+        <div class="top-flex-container">
+          <img src="figures/Asghar.jpeg" class="profile-pic" alt="Hassan Asghar" />
+          <div>
             <h3>Hassan Asghar</h3>
             <p><strong>Research Interests</strong>: HPC, Big Data Analytics, Cloud Computing, Network & Protocol Security.</p>
             <p><strong>Academic Profiles</strong>:
@@ -96,11 +118,10 @@
       <!-- Contact -->
       <section id="sec-contact">
         <h4>Contact</h4>
-          <ul>
-            <li><i class="material-icons left">mail</i> hasanasghar (at) naver (dot) com</li>
-          </ul>
+        <ul>
+          <li><i class="material-icons left">mail</i> hasanasghar (at) naver (dot) com</li>
+        </ul>
       </section>
-      
     </div>
     
     <!-- Right Sidebar: News -->
@@ -128,20 +149,3 @@
   <script src="js/init.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
