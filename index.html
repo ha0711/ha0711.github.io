@@ -51,6 +51,16 @@
     strong {
     font-weight: 700 !important; /* Ensures strong always appears bold */
     }
+    .news-list {
+      list-style-type: disc !important;  /* circle bullets */
+      padding-left: 1.5rem !important;   /* space for bullets */
+      margin: 0;
+      line-height: 1.6;
+      text-align: justify;
+    }
+    .news-list li {
+      margin-bottom: 0.5rem;
+    }
   </style>
 </head>
 <body>
@@ -116,8 +126,8 @@
         <h4>Education</h4>
         <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 1rem;">
           <!-- University Logos -->
-          <img src="figures/KENTECH.png" alt="KENTECH" style="height:70px; vertical-align:middle; margin-right:5px;">
-          <img src="figures/COMSATS2.png" alt="COMSATS" style="height:70px; vertical-align:middle; margin-right:5px;">
+          <img src="figures/KENTECH.png" alt="KENTECH" style="height:70px; vertical-align:middle; margin-right:3px;">
+          <img src="figures/COMSATS2.png" alt="COMSATS" style="height:70px; vertical-align:middle; margin-right:3px;">
           <img src="figures/SZABIST.png" alt="SZABIST" style="height:70px; vertical-align:middle;">
         </div>
         <!-- Education List -->
@@ -144,7 +154,7 @@
     <!-- Right Sidebar: News -->
     <aside id="sec-news" style="padding-left: 1.5rem; border-left: none;">
       <h4>Recent News</h4>
-      <ul style="list-style-type: disc; padding-left:1.5rem; line-height:1.6;" text-align: justify;">
+      <ul class="news-list">
         <li><b><span>[August'25]</span></b> Poster has been accepted to <strong>ICNP 2025.</strong></li>
         <li><b><span>[August'25]</span></b> Preprint “VWAttacker: A Systematic Security Testing Framework for Voice over WiFi User Equipments” submitted to arXiv.</li>
         <li><b><span>[March'22]</span></b> Article published: “Comparative analysis of task level heuristic scheduling algorithms in cloud computing,” The Journal of Supercomputing.</li>
@@ -166,6 +176,7 @@
   <script src="js/init.js"></script>
 </body>
 </html>
+
 
 
 
