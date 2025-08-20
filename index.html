@@ -52,14 +52,25 @@
     font-weight: 700 !important; /* Ensures strong always appears bold */
     }
     .news-list {
-      list-style-type: square !important;  /* circle bullets */
-      padding-left: 1.5rem !important;   /* space for bullets */
+      list-style: none;
+      padding-left: 0;
       margin: 0;
       line-height: 1.6;
       text-align: justify;
     }
     .news-list li {
+      position: relative;
+      padding-left: 1.2em;        /* space for bullet */
       margin-bottom: 0.5rem;
+    }
+
+    .news-list li::before {
+      content: "■";            
+      color: #1565c0;             
+      position: absolute;
+      left: 0;
+      font-size: 0.7em;          
+      top: 0.3em;             
     }
   </style>
 </head>
@@ -176,6 +187,7 @@
   <script src="js/init.js"></script>
 </body>
 </html>
+
 
 
 
