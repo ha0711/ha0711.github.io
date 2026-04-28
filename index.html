@@ -2,301 +2,865 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Academic homepage of Hassan Asghar, Ph.D. researcher working on systems, security, high-performance computing, cloud computing, and network protocol security." />
   <title>Hassan Asghar</title>
   <link rel="shortcut icon" href="figures/circuit.png" />
-  
-  <!-- Font Imports -->
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-  
-  <!-- CSS (Materialize + custom) -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" rel="stylesheet" />
-  <link href="css/style.css" rel="stylesheet" />
-  
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@700;900&display=swap" rel="stylesheet" />
+
   <style>
-    body { font-family: 'Lato', sans-serif; }
-    h1,h2,h3,h4 { font-family: 'Lato', sans-serif; }
+    :root {
+      --bg: #f7f8f5;
+      --surface: #ffffff;
+      --surface-soft: #fbfcf8;
+      --ink: #17211b;
+      --muted: #5e6a62;
+      --line: #dfe6dd;
+      --green: #2f6f4e;
+      --green-dark: #194d35;
+      --green-soft: #eaf5ee;
+      --gold: #c8942f;
+      --gold-soft: #fff5d8;
+      --blue-soft: #eaf3ff;
+      --shadow: 0 18px 45px rgba(23, 33, 27, 0.08);
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --radius-sm: 10px;
+      --max-width: 1180px;
+    }
 
-    /* Two-column Layout */
-    .layout-container {
-      display: grid;
-      grid-template-columns: 3fr 1fr;
-      gap: 2rem;
-      max-width: 1300px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    #sec-news {
-      border-left: 2px solid #e0e0e0;
-      padding-left: 1.5rem;
-    }
-    @media (max-width: 800px) {
-      .layout-container { display: block; }
-      #sec-news { border-left: none; padding-left: 0; margin-top: 2rem; }
-    }
+    * { box-sizing: border-box; }
 
-    /* Flexbox Alignment for Top Section */
-    .top-flex-container {
-      display: flex;
-      align-items: center; /* Vertically center image and text */
-      gap: 1.5rem;
-    }
-    .profile-pic {
-      max-height: 160px;
-      height: auto;
-      width: auto;
-      border-radius: 0px;
-    }
-    strong {
-    font-weight: 700 !important; /* Ensures strong always appears bold */
-    }
-    .news-list {
-      list-style: none;
-      padding-left: 0;
+    html { scroll-behavior: smooth; }
+
+    body {
       margin: 0;
-      line-height: 1.6;
-    }
-    .news-list li {
-      position: relative;
-      padding-left: 1.2em;        /* space for bullet */
-      margin-bottom: 0.5rem;
-    }
-
-    .news-list li::before {
-      content: "■";            
-      color: black;             
-      position: absolute;
-      left: 0;
-      font-size: 0.7em;          
-      top: 0.3em;             
-    }
-        /* Publication badges */
-    .pub-badge-row {
-      display: inline-flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-left: 6px;
-      vertical-align: middle;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(47, 111, 78, 0.14), transparent 32rem),
+        linear-gradient(180deg, #fbfcf8 0%, var(--bg) 42%, #eef3ee 100%);
+      line-height: 1.68;
     }
 
-    .pub-badge {
+    a {
+      color: var(--green-dark);
+      text-decoration: none;
+      transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    a:hover { color: var(--gold); }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(16px);
+      background: rgba(247, 248, 245, 0.86);
+      border-bottom: 1px solid rgba(223, 230, 221, 0.84);
+    }
+
+    .nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
       display: inline-flex;
       align-items: center;
-      gap: 4px;
-      padding: 3px 9px;
+      gap: 0.65rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #ffffff;
+      background: linear-gradient(135deg, var(--green), var(--green-dark));
+      box-shadow: 0 8px 22px rgba(47, 111, 78, 0.22);
+      font-size: 0.9rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: 0.94rem;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      display: inline-flex;
+      padding: 0.45rem 0.75rem;
       border-radius: 999px;
-      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--green-dark);
+      background: var(--green-soft);
+    }
+
+    .page {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.25rem 1.25rem 3rem;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 290px;
+      gap: 2rem;
+      align-items: center;
+      margin-top: 1rem;
+      padding: 2rem;
+      border: 1px solid rgba(223, 230, 221, 0.9);
+      border-radius: 32px;
+      background: rgba(255, 255, 255, 0.86);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -7rem;
+      top: -7rem;
+      width: 20rem;
+      height: 20rem;
+      background: radial-gradient(circle, rgba(200, 148, 47, 0.18), transparent 65%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.38rem 0.75rem;
+      border-radius: 999px;
+      color: var(--green-dark);
+      background: var(--green-soft);
+      border: 1px solid rgba(47, 111, 78, 0.14);
+      font-size: 0.84rem;
       font-weight: 700;
-      letter-spacing: 0.2px;
-      line-height: 1.4;
+      margin-bottom: 0.85rem;
+    }
+
+    h1, h2, h3, h4 { line-height: 1.16; }
+
+    h1 {
+      margin: 0;
+      font-family: "Merriweather", Georgia, serif;
+      font-size: clamp(2.35rem, 6vw, 4.6rem);
+      letter-spacing: -0.06em;
+      color: var(--ink);
+    }
+
+    .subtitle {
+      margin: 0.8rem 0 0;
+      font-size: clamp(1rem, 2.4vw, 1.28rem);
+      color: var(--green-dark);
+      font-weight: 700;
+    }
+
+    .hero-copy {
+      max-width: 760px;
+      margin: 1.1rem 0 0;
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 1.35rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      padding: 0.67rem 0.95rem;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 0.92rem;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--ink);
+    }
+
+    .button.primary {
+      color: #ffffff;
+      background: linear-gradient(135deg, var(--green), var(--green-dark));
+      border-color: transparent;
+      box-shadow: 0 10px 26px rgba(47, 111, 78, 0.22);
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      border-color: rgba(47, 111, 78, 0.35);
+    }
+
+    .portrait-card {
+      position: relative;
+      z-index: 1;
+      justify-self: center;
+      width: min(100%, 270px);
+      padding: 0.7rem;
+      border-radius: 30px;
+      background: linear-gradient(145deg, #ffffff, #eef5ed);
+      border: 1px solid rgba(223, 230, 221, 0.92);
+      box-shadow: 0 18px 38px rgba(23, 33, 27, 0.12);
+    }
+
+    .profile-pic {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 24px;
+      border: 1px solid rgba(223, 230, 221, 0.9);
+    }
+
+    .portrait-caption {
+      margin: 0.72rem 0 0.1rem;
+      text-align: center;
+      font-size: 0.86rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.9rem;
+      margin: 1.1rem 0 2rem;
+    }
+
+    .stat-card {
+      padding: 1.05rem;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(223, 230, 221, 0.9);
+      box-shadow: 0 12px 28px rgba(23, 33, 27, 0.05);
+    }
+
+    .stat-card strong {
+      display: block;
+      color: var(--green-dark);
+      font-size: 1.45rem;
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+
+    .stat-card span {
+      display: block;
+      margin-top: 0.35rem;
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(290px, 0.9fr);
+      gap: 1.2rem;
+      align-items: start;
+    }
+
+    .main-column, .side-column {
+      display: grid;
+      gap: 1.2rem;
+    }
+
+    .section-card {
+      padding: 1.55rem;
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(223, 230, 221, 0.9);
+      box-shadow: 0 12px 32px rgba(23, 33, 27, 0.055);
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 0.8rem;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-family: "Merriweather", Georgia, serif;
+      font-size: 1.36rem;
+      letter-spacing: -0.03em;
+    }
+
+    .section-kicker {
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .about-text {
+      margin: 0;
+      color: var(--muted);
+      text-align: justify;
+    }
+
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .focus-card {
+      padding: 0.9rem;
+      border-radius: var(--radius-md);
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+    }
+
+    .focus-card h3 {
+      margin: 0 0 0.28rem;
+      font-size: 0.98rem;
+      color: var(--green-dark);
+    }
+
+    .focus-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.91rem;
+      line-height: 1.55;
+    }
+
+    .education-list {
+      display: grid;
+      gap: 0.75rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .education-item {
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      gap: 0.85rem;
+      align-items: center;
+      padding: 0.85rem;
+      border-radius: var(--radius-md);
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+    }
+
+    .edu-logo {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+      border-radius: 14px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      padding: 0.35rem;
+    }
+
+    .education-item strong { color: var(--ink); }
+    .education-item span { color: var(--muted); font-size: 0.93rem; }
+
+    .publication-list {
+      display: grid;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: pub-counter;
+    }
+
+    .publication {
+      counter-increment: pub-counter;
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 0.9rem;
+      padding: 1rem;
+      border-radius: var(--radius-md);
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .publication:hover {
+      transform: translateY(-2px);
+      border-color: rgba(47, 111, 78, 0.28);
+      box-shadow: 0 16px 32px rgba(23, 33, 27, 0.07);
+    }
+
+    .publication::before {
+      content: counter(pub-counter);
+      width: 42px;
+      height: 42px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--green-dark);
+      background: var(--green-soft);
+      font-weight: 900;
+      border: 1px solid rgba(47, 111, 78, 0.15);
+    }
+
+    .pub-title {
+      display: block;
+      margin-bottom: 0.28rem;
+      color: var(--ink);
+      font-weight: 800;
+      line-height: 1.42;
+    }
+
+    .pub-authors, .pub-venue {
+      display: block;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .pub-venue em {
+      color: var(--green-dark);
+      font-style: normal;
+      font-weight: 800;
+    }
+
+    .pub-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.65rem;
+    }
+
+    .pub-links a, .pub-links span {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.32rem 0.62rem;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      color: var(--green-dark);
+      font-size: 0.84rem;
+      font-weight: 800;
+    }
+
+    .badge-row {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.6rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.32rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.79rem;
+      font-weight: 900;
+      letter-spacing: 0.01em;
       white-space: nowrap;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+      border: 1px solid transparent;
     }
 
-    .pub-badge.top-tier {
-      color: #5b3b00;
-      background: linear-gradient(135deg, #fff4c2, #f6c85f);
-      border: 1px solid #e0aa2b;
+    .badge.top-tier {
+      color: #5c3d00;
+      background: linear-gradient(135deg, #fff7d7, #f1c763);
+      border-color: #e2b141;
+      box-shadow: 0 8px 20px rgba(200, 148, 47, 0.18);
     }
 
-    .pub-badge.acceptance-rate {
+    .badge.acceptance {
       color: #0f3f2e;
       background: linear-gradient(135deg, #e8fff4, #b7efd0);
-      border: 1px solid #7fd3a3;
+      border-color: #8ed8ac;
     }
 
-    .pub-badge.venue {
+    .badge.venue {
       color: #17324d;
-      background: linear-gradient(135deg, #eaf4ff, #bcdcff);
-      border: 1px solid #8bbce8;
+      background: var(--blue-soft);
+      border-color: #bed8f3;
+    }
+
+    .news-list {
+      display: grid;
+      gap: 0.8rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .news-list li {
+      position: relative;
+      padding: 0.88rem 0.88rem 0.88rem 1rem;
+      border-left: 4px solid var(--green);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      background: var(--surface-soft);
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      font-size: 0.93rem;
+    }
+
+    .news-date {
+      display: block;
+      color: var(--green-dark);
+      font-weight: 900;
+      margin-bottom: 0.18rem;
+    }
+
+    .mini-profile {
+      display: grid;
+      gap: 0.65rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .mini-profile li {
+      display: flex;
+      gap: 0.55rem;
+      align-items: flex-start;
+    }
+
+    .mini-profile b {
+      min-width: 78px;
+      color: var(--ink);
+    }
+
+    .footer {
+      margin-top: 1.4rem;
+      padding: 1.4rem 1.25rem;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .footer strong { color: var(--green-dark); }
+
+    @media (max-width: 920px) {
+      .hero,
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .portrait-card {
+        justify-self: start;
+        max-width: 240px;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 680px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 0.2rem;
+      }
+
+      .page { padding-top: 1rem; }
+
+      .hero { padding: 1.25rem; border-radius: 24px; }
+
+      .section-card { padding: 1.1rem; }
+
+      .stats-grid,
+      .focus-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .publication {
+        grid-template-columns: 1fr;
+      }
+
+      .publication::before {
+        width: 34px;
+        height: 34px;
+      }
     }
   </style>
 </head>
+
 <body>
-
-  <!-- Navigation -->
-  <nav class="green lighten-1">
-    <div class="nav-wrapper container">
-      <ul class="right hide-on-med-and-down">
-        <li><a href="https://ha0711.github.io">Home</a></li>
-        <li><a href="#sec-profile">Profile</a></li>
-        <li><a href="#sec-education">Education</a></li>
-        <li><a href="#sec-publications">Publications</a></li>
-        <li><a href="#sec-news">News</a></li>
-      </ul>
-      <ul id="nav-mobile" class="side-nav">
-        <li><a href="https://hassan.github.io">Home</a></li>
-        <li><a href="#sec-profile">Profile</a></li>
-        <li><a href="#sec-education">Education</a></li>
-        <li><a href="#sec-publications">Publications</a></li>
-        <li><a href="#sec-news">News</a></li>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse">
-        <i class="material-icons">menu</i>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Hassan Asghar home">
+        <span class="brand-mark">HA</span>
+        <span>Hassan Asghar</span>
       </a>
-    </div>
-  </nav>
-  
-  <!-- Main Layout -->
-  <div class="layout-container">
-    <!-- Left Column -->
-    <div>
-      <!-- Top Section -->
-      <section id="sec-top">
-        <div class="top-flex-container">
-          <img src="figures/Asghar.jpeg" class="profile-pic" alt="Hassan Asghar" />
-          <div>
-            <h4 style="color: red; margin-bottom: 1;">Hassan Asghar</h4>
-            <p style="margin: 0;"><strong>Research Interests</strong>: HPC, Big Data Analytics, Cloud Computing, Network & Protocol Security.</p>
-            <pstyle="margin: 0;"><strong>Academic Profiles</strong>:
-              <a href="https://dblp.uni-trier.de/pid/295/6729.html" target="_blank">
-                <img src="https://icons.iconarchive.com/icons/academicons-team/academicons/128/dblp-square-icon.png" alt="DBLP" style="width:28px; vertical-align:middle;">
-              </a>
-              <a href="https://www.linkedin.com/in/ha0711/" target="_blank" style="margin-left:2px;">
-                <img src="https://icons.iconarchive.com/icons/simpleicons-team/simple/128/linkedin-icon.png" alt="LinkedIN" style="width:28px; vertical-align:middle;">
-              </a>
-              <a href="https://scholar.google.com/citations?user=NU8-MGwAAAAJ" target="_blank" style="margin-left:2px;">
-                <img src="https://icons.iconarchive.com/icons/academicons-team/academicons/128/google-scholar-square-icon.png" alt="Google Scholar" style="width:28px; vertical-align:middle;">
-              </a>
-            </p>
-            <pstyle="margin: 0;"><strong>Email</strong>: <span>hasanasghar at naver dot com</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- Profile Section -->
-      <section id="sec-profile">
-        <h4>Profile</h4>
-        <p style="text-align: justify;"><strong>Hassan Asghar</strong> holds an M.S. in Computer Science from COMSATS University Islamabad (Abbottabad Campus) and a B.S. in Computer Science from SZABIST, Islamabad Campus. His technical interests include Parallel & Distributed Computing, High-Performance Computing, Big Data Analytics, and Cloud Computing. He combines a research-oriented mindset with hands-on experience in system benchmarking and performance optimization to effectively bridge theory with real-world engineering solutions.</p>
-      </section>
-      
-      <!-- Education Section -->
-      <section id="sec-education" style="margin-top: 2rem;">
-        <h4>Education</h4>
-        <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 1rem;">
-          <!-- University Logos -->
-          <img src="figures/KENTECH.png" alt="KENTECH" style="height:70px; vertical-align:middle; margin-right:3px;">
-          <img src="figures/COMSATS2.png" alt="COMSATS" style="height:70px; vertical-align:middle; margin-right:3px;">
-          <img src="figures/SZABIST.png" alt="SZABIST" style="height:70px; vertical-align:middle;">
-        </div>
-        <!-- Education List -->
-        <ul style="list-style-type: disc; padding-left: 0px; line-height:1.6; text-align: justify;">
-          <li><b>Ph.D</b> (in progress), KENTECH, Naju-si, South Korea</li>
-          <li><b>MS</b> in Computer Science, <b>2018</b>, COMSATS, Abbottabad Campus, Pakistan</li>
-          <li><b>BS</b> in Computer Science, <b>2014</b>, SZABIST, Islamabad Campus, Pakistan</li>
-        </ul>
-      </section>
-      
-      <!-- Publications Section -->
-      <section id="sec-publications">
-        <h4>Publications</h4>
-        <ol style="line-height:1.6;" text-align: justify;">
-          <li><strong>Hassan Asghar</strong>, Myeong-Ha Hwang, Jeonghyun Joo, Heewoon Kang, YooJin Kwon, Kazi Samin Mubasshir, Imtiaz Karim, Elisa Bertino, Hyunwoo Lee, “Poster: Automated Security Property Extraction from Protocol Specifications,” 2025 IEEE 33rd International Conference on Network Protocols (ICNP), Oct. 13, 2025. [<a href="https://ieeexplore.ieee.org/abstract/document/11192438" target="_blank" rel="noopener">Paper</a>]</li>
-          <li>Imtiaz Karim, Hyunwoo Lee, <strong>Hassan Asghar</strong>, Kazi Samin Mubasshir, Seulgi Han, Mashroor Hasan Bhuiyan, Elisa Bertino, “VWAttacker: A Systematic Security Testing Framework for Voice over WiFi User Equipments,” <i>IEEE INFOCOM 2026</i>, 2026.<span class="pub-badge-row"><span class="pub-badge top-tier">★ Top-Tier Conference</span><span class="pub-badge venue">IEEE INFOCOM</span><span class="pub-badge acceptance-rate">Acceptance ≈19%</span></span> [<a href="https://arxiv.org/abs/2508.01469" target="_blank" rel="noopener">Paper</a> | Slides | <a href="https://github.com/hw5773/vowifi-ue-testing-framework" target="_blank" rel="noopener">Code</a>]</li>
-          <li><strong>Hassan Asghar</strong>, Eun-Sung Jung, “A Survey on Scheduling Techniques in the Edge Cloud: Issues, Challenges and Future Directions,” arXiv preprint arXiv:2202.07799, submitted Feb. 16, 2022. [<a href="https://arxiv.org/abs/2202.07799" target="_blank" rel="noopener">Paper</a>]</li>
-          <li>Laiba Hamid, Asmara Jadoon, <strong>Hassan Asghar</strong>, “Comparative analysis of task level heuristic scheduling algorithms in cloud computing,” The Journal of Supercomputing, vol. 78, pp. 12931–12949, Mar. 12, 2022. [<a href="https://link.springer.com/article/10.1007/s11227-022-04382-x" target="_blank" rel="noopener">Paper</a>]</li>
-          <li><strong>Hassan Asghar</strong>, B. Nazir, “Analysis and implementation of reactive fault tolerance techniques in Hadoop: a comparative study,” The Journal of Supercomputing, vol. 77, no. 7, pp. 7184–7210, 2021. [<a href="https://link.springer.com/article/10.1007/s11227-020-03491-9" target="_blank" rel="noopener">Paper</a>]</li>
-          <li><strong>Hassan Asghar</strong>, S. Choe, J. W. Choi, E. S. Jung, “Systematic Benchmarking/Profiling Approaches to Improve I/O Performance of GloSea,” 10th International Conference on Green and Human Information Technology (ICGHIT 2022), oral, Jan. 2022. [<a href="https://github.com/ha0711/ha0711.github.io/blob/main/Papers/Systematic%20Benchmarking%20Profiling%20Approaches%20to%20Improve%20IO%20Performance%20of%20GloSea.pdf" target="_blank" rel="noopener">Paper</a>]</li>
-        </ol>
-      </section>
-    </div>
-              
-    <!-- Right Sidebar: News -->
-    <aside id="sec-news" style="padding-left: 1.5rem; border-left: none;">
-      <h4>Recent News</h4>
-      <ul class="news-list">
-        <li><b><span>[December'25]</span></b>Our paper “VWATTACKER: A Systematic Security Testing Framework for Voice over WiFi User Equipments” has been accepted to <i>IEEE INFOCOM 2026.</i></li>
-        <li><b><span>[August'25]</span></b> Poster has been accepted to <i>ICNP 2025</i>.</li>
-        <li><b><span>[August'25]</span></b> Preprint “VWAttacker: A Systematic Security Testing Framework for Voice over WiFi User Equipments” submitted to arXiv.</li>
-        <li><b><span>[March'22]</span></b> Article published: “Comparative analysis of task level heuristic scheduling algorithms in cloud computing,” The Journal of Supercomputing.</li>
-        <li><b><span>[February'22]</span></b> Survey submitted: “A Survey on Scheduling Techniques in the Edge Cloud: Issues, Challenges and Future Directions,” arXiv.</li>
+      <ul class="nav-links">
+        <li><a href="#profile">Profile</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#news">News</a></li>
       </ul>
-    </aside>
-  </div>
-  
-  <!-- Footer -->
-  <footer class="page-footer green" style="padding:1rem;">
-    <div class="container center grey-text text-lighten-4">
-      © 2025 Hassan Asghar • Last updated: Dec 12, 2025
+    </nav>
+  </header>
+
+  <main id="top" class="page">
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <span class="eyebrow">Systems Security · HPC · Cloud Computing</span>
+        <h1 id="hero-title">Hassan Asghar</h1>
+        <p class="subtitle">Ph.D. Researcher at KENTECH</p>
+        <p class="hero-copy">
+          I work at the intersection of high-performance systems, cloud computing, and network protocol security. My research focuses on building, benchmarking, and testing scalable systems with practical security impact, including recent work on automated protocol analysis and Voice over WiFi security testing.
+        </p>
+
+        <div class="hero-actions" aria-label="Academic profile links">
+          <a class="button primary" href="mailto:hasanasghar@naver.com">Email</a>
+          <a class="button" href="https://scholar.google.com/citations?user=NU8-MGwAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+          <a class="button" href="https://dblp.uni-trier.de/pid/295/6729.html" target="_blank" rel="noopener">DBLP</a>
+          <a class="button" href="https://www.linkedin.com/in/ha0711/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="button" href="https://github.com/ha0711" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+
+      <aside class="portrait-card" aria-label="Profile photo">
+        <img src="figures/Asghar.jpeg" class="profile-pic" alt="Portrait of Hassan Asghar" />
+        <p class="portrait-caption">Researcher in systems, security, and performance engineering</p>
+      </aside>
+    </section>
+
+    <section class="stats-grid" aria-label="Research highlights">
+      <article class="stat-card">
+        <strong>INFOCOM</strong>
+        <span>Top-tier networking venue</span>
+      </article>
+      <article class="stat-card">
+        <strong>≈19%</strong>
+        <span>Historical acceptance range</span>
+      </article>
+      <article class="stat-card">
+        <strong>ICNP</strong>
+        <span>IEEE network protocols poster</span>
+      </article>
+      <article class="stat-card">
+        <strong>6+</strong>
+        <span>Publications and preprints</span>
+      </article>
+    </section>
+
+    <div class="content-grid">
+      <div class="main-column">
+        <section id="profile" class="section-card">
+          <div class="section-heading">
+            <h2>Profile</h2>
+            <span class="section-kicker">About</span>
+          </div>
+          <p class="about-text">
+            <strong>Hassan Asghar</strong> is a Ph.D. researcher at KENTECH with research interests in high-performance computing, big data analytics, cloud computing, and network and protocol security. He received an M.S. in Computer Science from COMSATS University Islamabad, Abbottabad Campus, and a B.S. in Computer Science from SZABIST, Islamabad Campus. His work combines research-driven problem formulation with hands-on systems experience in benchmarking, performance analysis, and security testing.
+          </p>
+        </section>
+
+        <section id="research" class="section-card">
+          <div class="section-heading">
+            <h2>Research Focus</h2>
+            <span class="section-kicker">Interests</span>
+          </div>
+          <div class="focus-grid">
+            <article class="focus-card">
+              <h3>Network & Protocol Security</h3>
+              <p>Security testing, protocol analysis, and automated extraction of security properties from specifications.</p>
+            </article>
+            <article class="focus-card">
+              <h3>High-Performance Computing</h3>
+              <p>Benchmarking, profiling, I/O performance, and practical optimization for large-scale systems.</p>
+            </article>
+            <article class="focus-card">
+              <h3>Cloud & Edge Systems</h3>
+              <p>Scheduling, resource management, reliability, and performance-aware distributed computing.</p>
+            </article>
+            <article class="focus-card">
+              <h3>Big Data Analytics</h3>
+              <p>Scalable data processing, distributed platforms, and empirical evaluation of system behavior.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="education" class="section-card">
+          <div class="section-heading">
+            <h2>Education</h2>
+            <span class="section-kicker">Academic training</span>
+          </div>
+          <ul class="education-list">
+            <li class="education-item">
+              <img class="edu-logo" src="figures/KENTECH.png" alt="KENTECH logo" />
+              <div><strong>Ph.D. in progress</strong><br><span>KENTECH, Naju-si, South Korea</span></div>
+            </li>
+            <li class="education-item">
+              <img class="edu-logo" src="figures/COMSATS2.png" alt="COMSATS logo" />
+              <div><strong>M.S. in Computer Science, 2018</strong><br><span>COMSATS University Islamabad, Abbottabad Campus, Pakistan</span></div>
+            </li>
+            <li class="education-item">
+              <img class="edu-logo" src="figures/SZABIST.png" alt="SZABIST logo" />
+              <div><strong>B.S. in Computer Science, 2014</strong><br><span>SZABIST, Islamabad Campus, Pakistan</span></div>
+            </li>
+          </ul>
+        </section>
+
+        <section id="publications" class="section-card">
+          <div class="section-heading">
+            <h2>Publications</h2>
+            <span class="section-kicker">Selected work</span>
+          </div>
+
+          <ol class="publication-list">
+            <li class="publication">
+              <div>
+                <span class="pub-title">Poster: Automated Security Property Extraction from Protocol Specifications</span>
+                <span class="pub-authors"><strong>Hassan Asghar</strong>, Myeong-Ha Hwang, Jeonghyun Joo, Heewoon Kang, YooJin Kwon, Kazi Samin Mubasshir, Imtiaz Karim, Elisa Bertino, Hyunwoo Lee</span>
+                <span class="pub-venue"><em>IEEE ICNP 2025</em>, 33rd International Conference on Network Protocols, Oct. 13, 2025</span>
+                <div class="badge-row"><span class="badge venue">IEEE ICNP</span><span class="badge acceptance">Poster</span></div>
+                <div class="pub-links"><a href="https://ieeexplore.ieee.org/abstract/document/11192438" target="_blank" rel="noopener">Paper</a></div>
+              </div>
+            </li>
+
+            <li class="publication">
+              <div>
+                <span class="pub-title">VWAttacker: A Systematic Security Testing Framework for Voice over WiFi User Equipments</span>
+                <span class="pub-authors">Imtiaz Karim, Hyunwoo Lee, <strong>Hassan Asghar</strong>, Kazi Samin Mubasshir, Seulgi Han, Mashroor Hasan Bhuiyan, Elisa Bertino</span>
+                <span class="pub-venue"><em>IEEE INFOCOM 2026</em>, to appear</span>
+                <div class="badge-row">
+                  <span class="badge top-tier">★ Top-Tier Conference Paper</span>
+                  <span class="badge venue">IEEE INFOCOM</span>
+                  <span class="badge acceptance">Acceptance ≈19%</span>
+                </div>
+                <div class="pub-links">
+                  <a href="https://arxiv.org/abs/2508.01469" target="_blank" rel="noopener">Paper</a>
+                  <span>Slides</span>
+                  <a href="https://github.com/hw5773/vowifi-ue-testing-framework" target="_blank" rel="noopener">Code</a>
+                </div>
+              </div>
+            </li>
+
+            <li class="publication">
+              <div>
+                <span class="pub-title">A Survey on Scheduling Techniques in the Edge Cloud: Issues, Challenges and Future Directions</span>
+                <span class="pub-authors"><strong>Hassan Asghar</strong>, Eun-Sung Jung</span>
+                <span class="pub-venue"><em>arXiv preprint</em> arXiv:2202.07799, submitted Feb. 16, 2022</span>
+                <div class="pub-links"><a href="https://arxiv.org/abs/2202.07799" target="_blank" rel="noopener">Paper</a></div>
+              </div>
+            </li>
+
+            <li class="publication">
+              <div>
+                <span class="pub-title">Comparative analysis of task level heuristic scheduling algorithms in cloud computing</span>
+                <span class="pub-authors">Laiba Hamid, Asmara Jadoon, <strong>Hassan Asghar</strong></span>
+                <span class="pub-venue"><em>The Journal of Supercomputing</em>, vol. 78, pp. 12931–12949, Mar. 12, 2022</span>
+                <div class="pub-links"><a href="https://link.springer.com/article/10.1007/s11227-022-04382-x" target="_blank" rel="noopener">Paper</a></div>
+              </div>
+            </li>
+
+            <li class="publication">
+              <div>
+                <span class="pub-title">Analysis and implementation of reactive fault tolerance techniques in Hadoop: a comparative study</span>
+                <span class="pub-authors"><strong>Hassan Asghar</strong>, B. Nazir</span>
+                <span class="pub-venue"><em>The Journal of Supercomputing</em>, vol. 77, no. 7, pp. 7184–7210, 2021</span>
+                <div class="pub-links"><a href="https://link.springer.com/article/10.1007/s11227-020-03491-9" target="_blank" rel="noopener">Paper</a></div>
+              </div>
+            </li>
+
+            <li class="publication">
+              <div>
+                <span class="pub-title">Systematic Benchmarking/Profiling Approaches to Improve I/O Performance of GloSea</span>
+                <span class="pub-authors"><strong>Hassan Asghar</strong>, S. Choe, J. W. Choi, E. S. Jung</span>
+                <span class="pub-venue"><em>ICGHIT 2022</em>, 10th International Conference on Green and Human Information Technology, oral, Jan. 2022</span>
+                <div class="pub-links"><a href="https://github.com/ha0711/ha0711.github.io/blob/main/Papers/Systematic%20Benchmarking%20Profiling%20Approaches%20to%20Improve%20IO%20Performance%20of%20GloSea.pdf" target="_blank" rel="noopener">Paper</a></div>
+              </div>
+            </li>
+          </ol>
+        </section>
+      </div>
+
+      <aside class="side-column">
+        <section class="section-card">
+          <div class="section-heading">
+            <h2>Contact</h2>
+            <span class="section-kicker">Profiles</span>
+          </div>
+          <ul class="mini-profile">
+            <li><b>Email</b><span>hasanasghar at naver dot com</span></li>
+            <li><b>Scholar</b><a href="https://scholar.google.com/citations?user=NU8-MGwAAAAJ" target="_blank" rel="noopener">Google Scholar profile</a></li>
+            <li><b>DBLP</b><a href="https://dblp.uni-trier.de/pid/295/6729.html" target="_blank" rel="noopener">Publication record</a></li>
+            <li><b>LinkedIn</b><a href="https://www.linkedin.com/in/ha0711/" target="_blank" rel="noopener">Professional profile</a></li>
+          </ul>
+        </section>
+
+        <section id="news" class="section-card">
+          <div class="section-heading">
+            <h2>Recent News</h2>
+            <span class="section-kicker">Updates</span>
+          </div>
+          <ul class="news-list">
+            <li>
+              <span class="news-date">December 2025</span>
+              Our paper <strong>“VWATTACKER: A Systematic Security Testing Framework for Voice over WiFi User Equipments”</strong> has been accepted to <em>IEEE INFOCOM 2026</em>.
+              <div class="badge-row"><span class="badge top-tier">★ Top-Tier</span><span class="badge acceptance">≈19% Acceptance</span></div>
+            </li>
+            <li>
+              <span class="news-date">August 2025</span>
+              Our poster on automated security property extraction has been accepted to <em>IEEE ICNP 2025</em>.
+            </li>
+            <li>
+              <span class="news-date">August 2025</span>
+              Preprint released: <strong>“VWAttacker: A Systematic Security Testing Framework for Voice over WiFi User Equipments.”</strong>
+            </li>
+            <li>
+              <span class="news-date">March 2022</span>
+              Article published in <em>The Journal of Supercomputing</em> on task-level heuristic scheduling algorithms in cloud computing.
+            </li>
+            <li>
+              <span class="news-date">February 2022</span>
+              Survey submitted on scheduling techniques in the edge cloud.
+            </li>
+          </ul>
+        </section>
+      </aside>
     </div>
+  </main>
+
+  <footer class="footer">
+    © 2026 <strong>Hassan Asghar</strong> · Last updated: April 2026
   </footer>
-  
-  <!-- Scripts -->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
