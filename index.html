@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Academic homepage of Hassan Asghar" />
   <title>Hassan Asghar</title>
+  $1
+
   <!-- Academic-style fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -238,9 +240,14 @@
     }
 
     .pub-title {
-        font-weight: 500;
-        color: #333;
-        letter-spacing: 0.05px;
+      font-weight: 750;
+      color: var(--text);
+    }
+
+    .pub-title.poster-title {
+      font-weight: 500;
+      color: #333;
+      letter-spacing: 0.05px;
     }
 
     .pub-venue {
@@ -256,36 +263,45 @@
       white-space: nowrap;
     }
 
-    .badge-row {
+    /* Publication badges */
+    .pub-badge-row {
       display: inline-flex;
       flex-wrap: wrap;
-      gap: 5px;
-      margin-left: 4px;
+      gap: 6px;
+      margin-left: 6px;
       vertical-align: middle;
     }
 
-    .badge {
+    .pub-badge {
       display: inline-flex;
       align-items: center;
-      padding: 2px 7px;
+      gap: 4px;
+      padding: 3px 9px;
       border-radius: 999px;
-      font-size: 12px;
-      line-height: 1.45;
+      font-size: 0.78rem;
       font-weight: 700;
-      border: 1px solid transparent;
+      letter-spacing: 0.2px;
+      line-height: 1.4;
       white-space: nowrap;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
     }
 
-    .badge.top-tier {
-      color: var(--gold);
-      background: var(--gold-light);
-      border-color: #ead49b;
+    .pub-badge.top-tier {
+      color: #5b3b00;
+      background: linear-gradient(135deg, #fff4c2, #f6c85f);
+      border: 1px solid #e0aa2b;
     }
 
-    .badge.acceptance {
-      color: var(--green);
-      background: var(--green-light);
-      border-color: #c7e2d3;
+    .pub-badge.acceptance-rate {
+      color: #0f3f2e;
+      background: linear-gradient(135deg, #e8fff4, #b7efd0);
+      border: 1px solid #7fd3a3;
+    }
+
+    .pub-badge.venue {
+      color: #17324d;
+      background: linear-gradient(135deg, #eaf4ff, #bcdcff);
+      border: 1px solid #8bbce8;
     }
 
     .side-box {
@@ -408,7 +424,7 @@
           <h2>Publications</h2>
           <ol class="publication-list">
             <li>
-              <span class="pub-title">Poster: Automated Security Property Extraction from Protocol Specifications.</span><br />
+              <span class="pub-title poster-title">Poster: Automated Security Property Extraction from Protocol Specifications.</span><br />
               <strong>Hassan Asghar</strong>, Myeong-Ha Hwang, Jeonghyun Joo, Heewoon Kang, YooJin Kwon, Kazi Samin Mubasshir, Imtiaz Karim, Elisa Bertino, Hyunwoo Lee.<br />
               <span class="pub-venue">2025 IEEE 33rd International Conference on Network Protocols (ICNP), Oct. 13, 2025.</span>
               <span class="pub-links">[<a href="https://ieeexplore.ieee.org/abstract/document/11192438" target="_blank" rel="noopener">Paper</a>]</span>
@@ -416,12 +432,13 @@
 
             <li>
               <span class="pub-title">VWAttacker: A Systematic Security Testing Framework for Voice over WiFi User Equipments.</span>
-              <span class="badge-row">
-                <span class="badge top-tier">Top-tier conference</span>
-                <span class="badge acceptance">Acceptance ≈19%</span>
+              <span class="pub-badge-row">
+                <span class="pub-badge top-tier">★ Top-Tier Conference</span>
+                <span class="pub-badge venue">IEEE INFOCOM</span>
+                <span class="pub-badge acceptance-rate">Acceptance ≈19%</span>
               </span><br />
               Imtiaz Karim, Hyunwoo Lee, <strong>Hassan Asghar</strong>, Kazi Samin Mubasshir, Seulgi Han, Mashroor Hasan Bhuiyan, Elisa Bertino.<br />
-              <strong>IEEE INFOCOM 2026</strong>, to appear.
+              $1<strong>IEEE INFOCOM 2026</strong>, to appear.$2
               <span class="pub-links">[<a href="https://arxiv.org/abs/2508.01469" target="_blank" rel="noopener">Paper</a> | Slides | <a href="https://github.com/hw5773/vowifi-ue-testing-framework" target="_blank" rel="noopener">Code</a>]</span>
             </li>
 
@@ -473,7 +490,7 @@
 
   <footer>
     <div class="container">
-      © 2026 Hassan Asghar · Last updated: 28 April 2026
+      © 2026 Hassan Asghar · Last updated: April 2026
     </div>
   </footer>
 </body>
