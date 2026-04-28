@@ -5,7 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Academic homepage of Hassan Asghar" />
   <title>Hassan Asghar</title>
-  <link rel="shortcut icon" href="figures/circuit.png" />
+  $1
+
+  <!-- Academic-style fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <style>
     :root {
@@ -13,12 +18,19 @@
       --muted: #666;
       --light: #f6f7f5;
       --line: #e5e5e5;
-      --green: #2f6f4e;
-      --green-light: #edf6f1;
-      --gold: #9b6a12;
-      --gold-light: #fff6df;
-      --max-width: 980px;
-    }
+
+       /* replace green theme with elegant navy */
+       --green: #445b78;
+       --green-light: #eef3f8;
+
+       --gold: #9b6a12;
+       --gold-light: #fff6df;
+
+       --blue: #6a4f74;
+       --blue-light: #f4eef7;
+
+       --max-width: 980px;
+       }
 
     * {
       box-sizing: border-box;
@@ -32,8 +44,8 @@
       margin: 0;
       color: var(--text);
       background: #fff;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      font-size: 16px;
+      font-family: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 17px;
       line-height: 1.65;
     }
 
@@ -44,6 +56,29 @@
 
     a:hover {
       text-decoration: underline;
+    }
+
+    .accent-green {
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    .accent-gold {
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .accent-blue {
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    .soft-highlight {
+      padding: 1px 5px;
+      border-radius: 6px;
+      background: var(--green-light);
+      color: var(--green);
+      font-weight: 700;
     }
 
     .container {
@@ -113,7 +148,7 @@
 
     h1 {
       margin: 0 0 6px;
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: "Merriweather", Georgia, "Times New Roman", serif;
       font-size: 34px;
       line-height: 1.15;
       font-weight: 700;
@@ -123,7 +158,8 @@
     .role {
       margin: 0 0 14px;
       color: var(--green);
-      font-weight: 600;
+      font-weight: 700;
+      letter-spacing: 0.1px;
     }
 
     .bio {
@@ -163,7 +199,7 @@
 
     h2 {
       margin: 0 0 16px;
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: "Merriweather", Georgia, "Times New Roman", serif;
       font-size: 23px;
       line-height: 1.25;
       color: var(--text);
@@ -189,6 +225,15 @@
       margin-bottom: 8px;
     }
 
+    .research-list strong {
+      color: var(--green);
+      font-weight: 800;
+    }
+
+    .education-list strong {
+      color: var(--blue);
+    }
+
     .publication-list {
       margin: 0;
       padding-left: 22px;
@@ -200,12 +245,17 @@
     }
 
     .pub-title {
-      font-weight: 700;
+      font-weight: 800;
       color: var(--text);
     }
 
     .pub-venue {
       color: var(--muted);
+    }
+
+    .pub-venue strong {
+      color: var(--green);
+      font-weight: 800;
     }
 
     .pub-links {
@@ -324,10 +374,10 @@
         <h1>Hassan Asghar</h1>
         <p class="role">Ph.D. Researcher · KENTECH</p>
         <p class="bio">
-          I am a Ph.D. researcher at KENTECH working on high-performance computing, cloud and edge systems, big data analytics, and network protocol security. My research interests center on building reliable and secure computing systems, with a particular emphasis on system benchmarking, performance analysis, and practical security testing.
+          I am a Ph.D. researcher at <span class="accent-green">KENTECH</span> working on <span class="accent-blue">high-performance computing</span>, <span class="accent-blue">cloud and edge systems</span>, <span class="accent-blue">big data analytics</span>, and <span class="accent-green">network protocol security</span>. My research interests center on building <span class="soft-highlight">reliable and secure computing systems</span>, with a particular emphasis on system benchmarking, performance analysis, and practical security testing.
         </p>
         <p class="bio">
-          I received my M.S. in Computer Science from COMSATS University Islamabad, Abbottabad Campus, and my B.S. in Computer Science from SZABIST, Islamabad Campus.
+          I received my <span class="accent-gold">M.S. in Computer Science</span> from COMSATS University Islamabad, Abbottabad Campus, and my <span class="accent-gold">B.S. in Computer Science</span> from SZABIST, Islamabad Campus.
         </p>
         <div class="links">
           <span>hasanasghar at naver dot com</span>
@@ -377,7 +427,7 @@
                 <span class="badge acceptance">Acceptance ≈19%</span>
               </span><br />
               Imtiaz Karim, Hyunwoo Lee, <strong>Hassan Asghar</strong>, Kazi Samin Mubasshir, Seulgi Han, Mashroor Hasan Bhuiyan, Elisa Bertino.<br />
-              <span class="pub-venue">IEEE INFOCOM 2026, to appear.</span>
+              $1<strong>IEEE INFOCOM 2026</strong>, to appear.$2
               <span class="pub-links">[<a href="https://arxiv.org/abs/2508.01469" target="_blank" rel="noopener">Paper</a> | Slides | <a href="https://github.com/hw5773/vowifi-ue-testing-framework" target="_blank" rel="noopener">Code</a>]</span>
             </li>
 
@@ -416,7 +466,7 @@
         <section id="news" class="side-box">
           <h2>News</h2>
           <ul class="news-list">
-            <li><span class="news-date">Dec. 2025</span> VWATTACKER accepted to IEEE INFOCOM 2026.</li>
+            <li><span class="news-date">Dec. 2025</span> <strong>VWATTACKER</strong> accepted to <span class="accent-green">IEEE INFOCOM 2026</span>.</li>
             <li><span class="news-date">Aug. 2025</span> Poster accepted to IEEE ICNP 2025.</li>
             <li><span class="news-date">Aug. 2025</span> VWAttacker preprint submitted to arXiv.</li>
             <li><span class="news-date">Mar. 2022</span> Article published in The Journal of Supercomputing.</li>
