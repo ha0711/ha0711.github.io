@@ -421,6 +421,25 @@
       background: #e8fff4;
       border: 1px solid #88e0b1;
       }
+      .profile-links {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 12px;
+      }
+
+      .profile-links img {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+      }
+
+      .profile-email {
+      margin-top: 8px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      }
     }
   </style>
 </head>
@@ -442,7 +461,18 @@
 
   <main id="top" class="container">
     <section class="intro" id="profile">
-      <img src="figures/Asghar.jpeg" class="profile-pic" alt="Hassan Asghar" />
+      <div class="profile-card">
+        <img src="figures/Asghar.jpeg" class="profile-pic" alt="Hassan Asghar" />
+
+        <div class="profile-links">
+          <a href="https://scholar.google.com/citations?user=NU8-MGwAAAAJ" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlescholar.svg" alt="Google Scholar" /></a>
+          <a href="https://dblp.uni-trier.de/pid/295/6729.html" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/dblp.svg" alt="DBLP" /></a>
+          <a href="https://www.linkedin.com/in/ha0711/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" /></a>
+          <a href="https://github.com/ha0711" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" /></a>
+        </div>
+
+        <div class="profile-email">hasanasghar at naver dot com</div>
+      </div>
       <div>
         <h1>Hassan Asghar</h1>
         <p class="role">Ph.D. Researcher · KENTECH</p>
@@ -452,13 +482,6 @@
         <p class="bio">
           I received my <span class="accent-gold">M.S. in Computer Science</span> from COMSATS University Islamabad, Abbottabad Campus, and my <span class="accent-gold">B.S. in Computer Science</span> from SZABIST, Islamabad Campus.
         </p>
-        <div class="links">
-          <span>hasanasghar at naver dot com</span>
-          <a href="https://scholar.google.com/citations?user=NU8-MGwAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
-          <a href="https://dblp.uni-trier.de/pid/295/6729.html" target="_blank" rel="noopener">DBLP</a>
-          <a href="https://www.linkedin.com/in/ha0711/" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://github.com/ha0711" target="_blank" rel="noopener">GitHub</a>
-        </div>
       </div>
     </section>
 
