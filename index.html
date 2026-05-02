@@ -342,7 +342,55 @@
       font-size: 14px;
       text-align: center;
     }
+    .profile-card {
+      width: 180px;
+      text-align: center;
+    }
 
+    .profile-pic {
+      display: block;
+    }
+
+    .profile-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      width: 180px;
+      margin-top: 10px;
+      line-height: 0;
+    }
+
+    .profile-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      flex: 0 0 24px;
+      overflow: hidden;
+      text-decoration: none;
+    }
+
+    .profile-links a img {
+      display: block !important;
+      width: 22px !important;
+      height: 22px !important;
+      min-width: 22px !important;
+      min-height: 22px !important;
+      max-width: 22px !important;
+      max-height: 22px !important;
+      object-fit: contain !important;
+    }
+
+    .profile-email {
+      width: 180px;
+      margin-top: 8px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.35;
+    }
     @media (max-width: 760px) {
       nav {
         align-items: flex-start;
@@ -376,6 +424,7 @@
       text-decoration-thickness: 1.5px;
       text-underline-offset: 6px;
       text-decoration-color: #8a2f3a;
+      font-style: normal;
       }
       .author-note {
         margin-top: 8px;
@@ -424,52 +473,6 @@
       color: #00875a;
       background: #e8fff4;
       border: 1px solid #88e0b1;
-      }
-      
-      .profile-card {
-      width: 180px;
-      }
-      
-      .profile-links {
-      display: flex;
-      justify-content: center;
-      align-items: center;  
-      gap: 10px;
-      margin-top: 10px;
-      width: 180px;
-      }
-
-      .profile-links a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 24px;
-      height: 24px;
-      flex: 0 0 24px;
-      overflow: hidden;
-      }
-
-      .profile-links a img,
-      .profile-links img {
-      width: 22px !important;
-      height: 22px !important;
-      max-width: 22px !important;
-      max-height: 22px !important;
-      object-fit: contain;
-      display: block;
-      }
-      
-      .profile-links img {
-      width: 28px;
-      height: 28px;
-      object-fit: contain;
-      }
-
-      .profile-email {
-      margin-top: 8px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 14px;
       }
     }
   </style>
@@ -587,7 +590,7 @@
               <span class="pub-title">Systematic Benchmarking/Profiling Approaches to Improve I/O Performance of GloSea.</span><br />
               <strong>Hassan Asghar</strong><span class="author-symbol">†</span>, Soo-hyuck Choe, Jin-Wook. Choi, and Eun-Sung Jung.<br />
               <span class="pub-venue">2022 10th International Conference on Green and Human Information Technology (ICGHIT)</span>
-              <span class="pub-links neon-links">[<a class="neon-link paper" href="https://github.com/ha0711/ha0711.github.io/blob/main/Papers/Systematic%20Benchmarking%20Profiling%20Approaches%20to%20Improve%20IO%20Performance%20of%20GloSea.pdf" target="_blank" rel="noopener">Paper</a>
+              <span class="pub-links neon-links"><a class="neon-link paper" href="https://github.com/ha0711/ha0711.github.io/blob/main/Papers/Systematic%20Benchmarking%20Profiling%20Approaches%20to%20Improve%20IO%20Performance%20of%20GloSea.pdf" target="_blank" rel="noopener">Paper</a>
               </span>
             </li>
           </ol>
