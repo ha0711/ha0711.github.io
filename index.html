@@ -390,18 +390,22 @@
         vertical-align: super;
         margin-left: 1px;
       }
+
       .neon-links {
       display: inline-flex;
+      flex-wrap: wrap;
       gap: 6px;
       margin-left: 4px;
+      vertical-align: middle;
       }
 
       .neon-link {
+      display: inline-flex;
       padding: 2px 8px;
       border-radius: 999px;
       font-size: 13px;
       font-weight: 700;
-      text-decoration: none;
+      text-decoration: none !important;
       }
 
       .neon-link.paper {
@@ -421,13 +425,40 @@
       background: #e8fff4;
       border: 1px solid #88e0b1;
       }
+      
+      .profile-card {
+      width: 180px;
+      }
+      
       .profile-links {
       display: flex;
       justify-content: center;
+      align-items: center;  
       gap: 10px;
-      margin-top: 12px;
+      margin-top: 10px;
+      width: 180px;
       }
 
+      .profile-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      flex: 0 0 24px;
+      overflow: hidden;
+      }
+
+      .profile-links a img,
+      .profile-links img {
+      width: 22px !important;
+      height: 22px !important;
+      max-width: 22px !important;
+      max-height: 22px !important;
+      object-fit: contain;
+      display: block;
+      }
+      
       .profile-links img {
       width: 28px;
       height: 28px;
